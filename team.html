@@ -4,39 +4,8 @@
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS Flipping Animation - Example 2 - [MyLớp.edu.vn]</title>
+    <title>Game 20 - 10</title>
 	<link rel="stylesheet" href="css/flip.css">
-	<!--<link href='http://fonts.googleapis.com/css?family=Noto+Sans&subset=vietnamese' rel='stylesheet' type='text/css'>-->
-	
-	<!-- Example Template use Bootstrap -->
-	
-	<link rel="shortcut icon" href="../../../../example-template/favicon.ico">
-	
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="../../../../example-template/preus-theme/css/bootstrap/bootstrap.min.css">
-    
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/index.js"></script>
-    <script>
-        // Set cookie team
-        function setCookieTeam(val) {
-            setCookie('team', val, 1);
-            location.replace("./" + getCookie('game') + ".html");
-        }
-    </script>
-
-	<link rel="stylesheet" href="../../../../example-template/preus-theme/css/skins/main.css">
-    <link  rel="stylesheet" href="../../../../example-template/style.css">
-	
-	<!-- Example File after here -->
-	<!-- <link rel="stylesheet" href="flip.css"> -->
 </head>
 
 <body>
@@ -44,15 +13,11 @@
 <section class="container">
 	<div class="row">
 		<div class="col-md-12 title">
-			<!-- <h1 class="text-center">Màn hình chọn Team</h1> -->
-			
 			<div class="row-cl">
 				<div class="col-md-4">
-					<!-- <h3>Team 1</h3> -->
 					<div class="flip-container cl-1" ontouchstart="this.classList.toggle('hover');">
 						<div class="flipper">
 							<div class="front">
-								<!-- front content -->
 								<img src="images/team/team_1.png"/>
 								<div class="text">
 									Team 1
@@ -60,19 +25,14 @@
 							</div>
 							<div class="back" onclick="setCookieTeam('team1')">
 								<img src="images/team/back_1.png"/>
-								<!-- back content -->
-								<p>Chọn</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<!-- <h3>Team 2</h3> -->
-					<!-- <div class="flip-container cl-2 vertical" ontouchstart="this.classList.toggle('hover');"> -->
 					<div class="flip-container cl-2" ontouchstart="this.classList.toggle('hover');">
 						<div class="flipper">
 							<div class="front">
-								<!-- front content -->
 								<img src="images/team/team_2.png"/>
 								<div class="text">
 									Team 2
@@ -81,17 +41,14 @@
 							<div class="back" onclick="setCookieTeam('team2')">
 								<!-- back content -->
 								<img src="images/team/back_3.png"/>
-								<p>Chọn</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<!-- <h3>Team 3</h3> -->
 					<div class="flip-container cl-3" ontouchstart="this.classList.toggle('hover');"  id="flip-toggle">
 						<div class="flipper">
 							<div class="front">
-								<!-- front content -->
 								<img src="images/team/team_3.png"/>
 								<div class="text">
 									Team 3
@@ -100,17 +57,14 @@
 							<div class="back" onclick="setCookieTeam('team3')">
 								<!-- back content -->
 								<img src="images/team/back_2.png"/>
-								<p>Chọn</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<!-- <h3>Team 4</h3> -->
 					<div class="flip-container cl-4" ontouchstart="this.classList.toggle('hover');"  id="flip-toggle">
 						<div class="flipper">
 							<div class="front">
-								<!-- front content -->
 								<img src="images/team/team_4.png"/>
 								<div class="text">
 									Team 4
@@ -119,7 +73,6 @@
 							<div class="back" onclick="setCookieTeam('team4')">
 								<!-- back content -->
 								<img src="images/team/back_4.png"/>
-								<p>Chọn</p>
 							</div>
 						</div>
 					</div>
@@ -127,46 +80,7 @@
 			</div>
 		</div>
     </div>
-</section><!-- end of main content -->
+</section>
 
-<footer class="container-fluid">
-    <div class="container">
-		<!-- <div class="row">
-			<div class="col-md-10">
-				&copy; 2015 <a href="http://mylop.edu.vn/" title="Lớp học của tôi, Tình yêu của tôi - MyLớp is MyLove" class="my_site"><span>MyLớp.edu.vn</span></a> Vui lòng ghi rõ nguồn khi chia sẻ các bài viết từ trang web này
-			</div>
-			<div id="social-icons" class="col-md-2">
-				<a href="https://www.facebook.com/mylop.edu.vn/" title="Facebook" target="_blank"><i class="social-icon fa fa-facebook-square"></i></a>
-	            <a href="http://twitter.com/mylop_edu_vn/" title="Twitter" target="_blank"><i class="social-icon fa fa-twitter-square"></i></a>
-	            <a href="https://plus.google.com/u/6/b/114513400476635223361/" title="Google Plus" target="_blank"><i class="social-icon fa fa-google-plus-square"></i></a>
-	            <a href="https://www.youtube.com/user/hocbootstrap/" title="YouTube" target="_blank"><i class="social-icon fa fa-youtube-square"></i></a>
-			</div>
-		</div> -->
-    </div>
-</footer><!-- end of footer -->
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="../../../../example-template/preus-theme/js/bootstrap.min.js"></script>   
-<script>
-	function setCookie (cname,cvalue,exdays) {
-		var d = new Date();
-		d.setTime(d.getTime() + (exdays*24*60*60*1000));
-		var expires = "expires=" + d.toGMTString();
-		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-		// alert("Play");
-	}
-	document.querySelector(".cl-1").addEventListener("click", function (){
-		setCookie('team_value', 1, 1);
-	})
-	document.querySelector(".cl-2").addEventListener("click", function (){
-		setCookie('team_value', 2, 1);
-	})
-	document.querySelector(".cl-3").addEventListener("click", function (){
-		setCookie('team_value', 3, 1);
-	})
-	document.querySelector(".cl-4").addEventListener("click", function (){
-		setCookie('team_value', 4, 1);
-	})
-</script>
 </body>
 </html>

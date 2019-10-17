@@ -36,6 +36,18 @@ function deleteCookie(cookieName) {
         document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
 }
+// Set cookie when fail
+function setCookieFail(score) {
+    setCookie('result', score, 1);
+    setCookie('turnPlay', Number(getCookie('turnPlay')) + 1, 1);
+    location.replace('../result_score.html');
+}
+// Set cookie game
+function setCookieGame(val) {
+    setCookie('game', val, 1);
+    setCookie('turnPlay', 0, 1);
+    location.replace('./index.html');
+}
 // Redirect to neccessary page
 function redirect() {
     if (checkCookie('game') === false) {

@@ -126,7 +126,51 @@ function gameOver() {
 }
 
 function cpuType1() {
-    let newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1Url);
+    let a = randomInt(1, 10);
+    let newCpu;
+    switch (a) {
+        case 1: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R1Url);
+            break;
+        
+        case 2: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R2Url);
+            break;
+        
+        case 3: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R3Url);
+            break;
+        
+        case 4: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R4Url);
+            break;
+
+        case 5: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R5Url);
+            break;
+
+        case 6: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R6Url);
+            break;
+
+        case 7: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R7Url);
+            break;
+
+        case 8: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R8Url);
+            break;
+
+        case 9: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R9Url);
+            break;
+
+        case 10: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType1R10Url);
+            break;
+        
+    }
+
     createCpu(newCpu);
     newCpu.type = "type1";
     newCpu.point = 10;
@@ -150,7 +194,50 @@ function cpuType1() {
 }
 
 function cpuType2() {
-    let newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2Url);
+    let a = randomInt(1, 10);
+    let newCpu;
+    switch (a) {
+        case 1: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R1Url);
+            break;
+        
+        case 2: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R2Url);
+            break;
+        
+        case 3: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R3Url);
+            break;
+        
+        case 4: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R4Url);
+            break;
+
+        case 5: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R5Url);
+            break;
+
+        case 6: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R6Url);
+            break;
+
+        case 7: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R7Url);
+            break;
+
+        case 8: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R8Url);
+            break;
+
+        case 9: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R9Url);
+            break;
+
+        case 10: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R10Url);
+            break;
+    }
+
     createCpu(newCpu);
     newCpu.point = 20;
     let step = 1;
@@ -185,7 +272,51 @@ function cpuType2() {
 }
 
 function cpuType3() {
-    let newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3Url);
+    let a = randomInt(1, 10);
+    
+    let newCpu;
+    switch (a) {
+        case 1: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R1Url);
+            break;
+        
+        case 2: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R2Url);
+            break;
+        
+        case 3: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R3Url);
+            break;
+        
+        case 4: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R4Url);
+            break;
+
+        case 5: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R5Url);
+            break;
+
+        case 6: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R6Url);
+            break;
+
+        case 7: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R7Url);
+            break;
+
+        case 8: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R8Url);
+            break;
+
+        case 9: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R9Url);
+            break;
+
+        case 10: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R10Url);
+            break;
+    }
+
     createCpu(newCpu);
     newCpu.point = 30;
     let step = 1;
@@ -220,7 +351,51 @@ function cpuType3() {
 }
 
 function cpuType4() {
-    let newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4Url);
+    let a = randomInt(1, 10);
+    
+    let newCpu;
+    switch (a) {
+        case 1: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R1Url);
+            break;
+        
+        case 2: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R2Url);
+            break;
+        
+        case 3: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R3Url);
+            break;
+        
+        case 4: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R4Url);
+            break;
+
+        case 5: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R5Url);
+            break;
+
+        case 6: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R6Url);
+            break;
+
+        case 7: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R7Url);
+            break;
+
+        case 8: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R8Url);
+            break;
+
+        case 9: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R9Url);
+            break;
+
+        case 10: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R10Url);
+            break;
+    }
+    
     createCpu(newCpu);
     newCpu.point = 40;
     let step = 1;
@@ -255,7 +430,49 @@ function cpuType4() {
 }
 
 function cpuType5() {
-    let newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5Url);
+    let a = randomInt(1, 10);
+    let newCpu
+    switch (a) {
+        case 1: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R1Url);
+            break;
+        
+        case 2: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R2Url);
+            break;
+        
+        case 3: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R3Url);
+            break;
+        
+        case 4: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R4Url);
+            break;
+        case 5: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R5Url);
+            break;
+
+        case 6: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R6Url);
+            break;
+
+        case 7: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R7Url);
+            break;
+
+        case 8: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R8Url);
+            break;
+
+        case 9: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R9Url);
+            break;
+
+        case 10: 
+            newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType5R10Url);
+            break;
+    }
+
     createCpu(newCpu);
     newCpu.point = 50;
     let step = 1;
@@ -306,7 +523,6 @@ function createCpu(newCpu) {
 // Function to make cpu move
 function cpuRunning(runner, step, lane) {
     if (time === 60) {
-        console.log("end");
         isGameOver = true;
         runner.stop();
         playerAnimation.stop();
@@ -319,13 +535,6 @@ function cpuRunning(runner, step, lane) {
         PlayerGameOver.x = playerAnimation.x;
         PlayerGameOver.y = playerAnimation.y + 15;
         playContainer.addChild(PlayerGameOver);
-
-        // let PlayerGameOverIcon = Sprite.fromImage(playerGameOverIconUrl);
-        // PlayerGameOverIcon.x = PlayerGameOver.x + PlayerGameOver.width - 10;
-        // PlayerGameOverIcon.y = PlayerGameOver.y + 5;
-        // PlayerGameOverIcon.width = 50;
-        // PlayerGameOverIcon.height = 49;
-        // playContainer.addChild(PlayerGameOverIcon);
 
         let PlayerGameOverText = Sprite.fromImage(playerGameOverTextUrl);
         PlayerGameOverText.width = 60;

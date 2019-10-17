@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'japanFont';
+    src: url('../../fonts/mplus1p/MPLUS1p-ExtraBold.woff2') format('woff2')
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+*{
+    overflow-y: hidden;
+    font-family: 'japanFont', sans-serif;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 0px;
+}
+
+a {
+    position: fixed;
+    outline: none;
+    top: 2px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    outline: none;
+}

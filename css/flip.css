@@ -39,14 +39,16 @@ html, body {
     -moz-transform: rotateY(0deg);
     -o-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
-    transform: rotateY(0deg);
+	transform: rotateY(0deg);
+	cursor: pointer;
 }
 
 .flip-container:hover .front, .flip-container.hover .front {
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+	cursor: pointer;
 }
 /* END: Accommodating for IE */
 
@@ -152,23 +154,14 @@ html, body {
 }
 /* END: Accommodating for IE */
 
-/* .cl-1 {
-	width: 33%;
-}
-.cl-2 {
-	width: 33%;
-}
-.cl-3 {
-	width: 33%;
-} */
 .row-cl {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	/* margin-top: 95px; */
-	padding-top: 150px;
+	/* padding-top: 130px; */
 }
 .front {
+	transform: rotateY(0deg);
 	-webkit-transform: rotateY(0deg);
 	-ms-transform: rotateY(0deg);
 	z-index: 2;
@@ -187,8 +180,6 @@ html, body {
 	-o-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);
 	transform: rotateY(180deg);
-
-	/* background-color: aquamarine; */
 }
 .back {
 	text-align: center;
@@ -204,15 +195,11 @@ html, body {
 .front img {
 	width: 186px;
     height: 395px;
-	/* height: 90%;
-    width: 100%; */
 }
 .back img {
 	width: 186px;
 	height: 425px;
 	opacity: 0.5;
-	/* height: 90%;
-    width: 100%; */
 }
 .back p {
 	position: absolute;
@@ -222,14 +209,16 @@ html, body {
 }
 .text {
 	text-align: center;
-	font-size: 25px;
+	font-size: 30px;
 	font-weight: 900;
 	color: white;
 }
 .container {
-	/* background-image: url("background.jpg"); */
-	height: 100%;
-	background-repeat: no-repeat;
-	background: rgba(0, 0, 0, .65) url('../images/team/background.jpg');
-	background-blend-mode: darken;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background: rgba(0, 0, 0, .65) url(../images/team/background.jpg);
+    background-blend-mode: darken;
 }

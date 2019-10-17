@@ -16,7 +16,7 @@
             font-size: 21px;
             border: 5px solid #d3325f;
             height: 309px;
-            padding: 8px
+            padding: 8px;
         }
 
         .display-1 {
@@ -28,8 +28,12 @@
             background-color: #30302f;
         }
 
+        small {
+            font-size: 64px;
+        }
+
         .blue {
-            color: #dbf065;
+            color: #f7f702;
         }
 
         .primary-color {
@@ -39,7 +43,6 @@
         .primary-color-2 {
             color: white;
         }
-
         .choose-game {
             text-align: center;
             padding-bottom: 16px;
@@ -49,7 +52,7 @@
         }
 
         #header {
-            min-height: calc(100vh - 20px);
+            min-height: calc(100vh);
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
                 url(images/choose_game/game_bg_2.jpg);
             background-position: center;
@@ -63,6 +66,7 @@
         }
 
         .banner h1 {
+            font-size: 70px;
             border-top: 6px dotted #c9c1ac;
             border-bottom: 6px dotted #c9c1ac;
             animation: fromLeft;
@@ -173,14 +177,6 @@
         }
     </style>
     <script type="text/javascript" src="./js/index.js"></script>
-    <script>
-        // Set cookie game
-        function setCookieGame(val) {
-            setCookie('game', val, 1);
-            setCookie('turnPlay', 0, 1);
-            location.replace('./index.html');
-        }
-    </script>
 </head>
 
 <body>
@@ -190,8 +186,7 @@
                 <div class="col">
                     <div class="banner text-center">
                         <h1 class="display-1 text-capitalize w-50 mx-auto font-weight-bold">
-                            <small class="blue font-weight-bold">Happy</small><strong class="primary-color-2">Woman's
-                                Day 20-10</strong>
+                            <small class="blue font-weight-bold">Happy </small><strong class="primary-color-2"></strong>Vietnamese Woman's Day 20-10</strong>
                         </h1>
                     </div>
                 </div>
@@ -205,10 +200,11 @@
             <div class="row parent-container">
                 <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
                     <div class="item-container">
-                        <img src="images/choose_game/marathon.png" class="img-fluid img-thumbnail item-img" alt="menu item">
-                        <div onclick="setCookieGame('marathon')">
+                        <img src="images/choose_game/marathon_2.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="">
                             <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Chạy marathon</h1>
                         </div>
+
                     </div>
                     <p class="mt-28">Game marathon là game thi chạy giữa những người với nhau, người chơi có thể chạy
                         chính giữa, bên trái hoặc bên phải sao cho không va chạm với người chạy cùng, nếu va vào thì end
@@ -216,8 +212,8 @@
                 </div>
                 <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
                     <div class="item-container">
-                        <img src="images/choose_game/shooter.png" class="img-fluid img-thumbnail item-img" alt="menu item">
-                        <div onclick="setCookieGame('bird')">
+                        <img src="images/choose_game/shooter_2.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="">
                             <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Bắn chim</h1>
                         </div>
                     </div>

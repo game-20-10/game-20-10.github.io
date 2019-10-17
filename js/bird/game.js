@@ -5,7 +5,7 @@ const Container = PIXI.Container;
 const Application = PIXI.Application;
 const loader = PIXI.loader;
 const Sprite = PIXI.Sprite;
-const logicalWidth = 140;
+const logicalWidth = 240;
 const logicalHeight = 240;
 
 const app = new Application({
@@ -121,26 +121,26 @@ const generatePipeContainer = (center) => {
 const generatePipes = () => {
     // Abort if a pipe has not left the screen
     if (pipes[0].x < -(id['down-green-pipe.png'].width)) {
-        pipes.splice(0, 1);
-        return;
+      pipes.splice(0, 1);
+      return;
     }
-
-    const stopGeneratingAt = app.width * 2;
+  
+    const stopGeneratingAt = renderer.width * 2;
     const centerPoint = Math.random() * ((OPEN_SPACE_HEIGHT - currentGapSize) - (currentGapSize)) + currentGapSize;
     let currentPosition = pipes.slice(-1)[0].x + PIPE_SEPARATION;
-
+    
     while (currentPosition < stopGeneratingAt) {
-        const pipeContainer = generatePipeContainer(centerPoint, currentPosition);
-        pipeContainer.x = currentPosition;
-
-        pipes.push(pipeContainer);
-        gameScene.addChild(pipeContainer);
-        // Move the floor to the front
-        gameScene.setChildIndex(floor, gameScene.children.length - 1);
-
-        currentPosition += PIPE_SEPARATION;
+      const pipeContainer = generatePipeContainer(centerPoint, currentPosition);
+      pipeContainer.x = currentPosition;
+  
+      pipes.push(pipeContainer);
+      gameScene.addChild(pipeContainer);
+      // Move the floor to the front
+      stage.setChildIndex(floor, stage.children.length - 1);
+  
+      currentPosition += PIPE_SEPARATION;
     }
-};
+  };
 
 const animatePipes = (speed) => {
     pipes.forEach((pipe) => {
@@ -252,7 +252,7 @@ const checkCollisions = () => {
 const animateGround = (speed) => {
     floor.x -= speed;
 
-    if (floor.x < -23.5) {
+    if (floor.x < -100) {
         floor.x = 0;
     }
 };
@@ -337,6 +337,7 @@ const lost = () => {
 const preLost = () => {
     gameSpeed = 0;
 
+    localStorage.setItem("score", gameScore);
     // Remove the fly click listener
     app.view.removeEventListener('click', flyClickHandler);
 
@@ -391,40 +392,40 @@ const init = () => {
     currentGapSize = 70;
     gameScore = 0;
     pipes = [];
-
     // Object which refers to sprites in atlas
-    // id = loader.resources["../../images/bird/sprites.json"].textures;
-    id = loader.resources['../../images/brid/sprites.json'].textures;
+    id = loader.resources["../../images/bird/sprites.json"].textures;
 
     // Adds night background
     darkBackground = new Sprite(id['night-bg.png']);
+    darkBackground.width = 240;
     gameScene.addChild(darkBackground);
 
     // Adds day background
     background = new Sprite(id['day-bg.png']);
+    background.width = 240;
     gameScene.addChild(background);
 
     // Adds the floor
     floor = new Sprite(id['floor.png']);
     floor.y = OPEN_SPACE_HEIGHT;
+    floor.width = 380;
     gameScene.addChild(floor);
 
     // Adds bird
     bird = new Sprite(id[birdAnimationStates[0]]);
     bird.y = (OPEN_SPACE_HEIGHT / 2) - (bird.height / 2) + 10;
-    bird.x = (gameScene.width / 2) - (40);
+    bird.x = (gameScene.width / 2) - (80);
     bird.pivot.set(bird.width / 2, bird.height / 2);
     // Bird physics properties
     bird.vy = 0;
     bird.ay = 0.12;
     gameScene.addChild(bird);
 
+
     // Adds a pipe
     const pipeContainer = generatePipeContainer(OPEN_SPACE_HEIGHT / 2);
     pipeContainer.x = app.width;
-    
     pipes.push(pipeContainer);
-
     gameScene.addChild(pipeContainer);
 
     // Adds a score container + scores
@@ -461,5 +462,5 @@ window.addEventListener('resize', resizeHandler);
 document.body.appendChild(app.view);
 
 loader
-    .add('public/images/sprites.json')
+    .add("../../images/bird/sprites.json")
     .load(init);

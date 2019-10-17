@@ -7,18 +7,6 @@ canvas {
     margin: 0 auto;
 }
 
-@font-face {
-    font-family: 'mplus1pRound';
-    font-style: normal;
-    src: local('mplus1pRound'), url('../fonts/mplus1pRounded/m-plus-rounded-1c-v10-japanese-900.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'mplus1pRoundLatin';
-    font-style: normal;
-    src: local('mplus1pRoundLatin'), url('../fonts/mplus1pRounded/m-plus-rounded-1c-v10-latin-700.woff2') format('woff2');
-}
-
 a {
     position: fixed;
     outline: none;
