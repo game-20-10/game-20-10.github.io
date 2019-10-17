@@ -341,6 +341,7 @@ function waitingEndGame() {
         clearInterval(moveEndText);
         gameScene.visible = false;
         endText.visible = false;
+        setCookieFail(score);
         addResultScreen();
     });       
 };

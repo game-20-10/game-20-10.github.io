@@ -83,6 +83,7 @@ function jumpDown(element) {
     }, 30);
     setTimeout(function () {
         clear();
+        setCookieFail(point);
         resultScreen();
     }, 1000);
 }
@@ -212,7 +213,6 @@ function cpuType2() {
         case 4: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R4Url);
             break;
-
         case 5: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType2R5Url);
             break;
@@ -273,7 +273,7 @@ function cpuType2() {
 
 function cpuType3() {
     let a = randomInt(1, 10);
-    
+
     let newCpu;
     switch (a) {
         case 1: 
@@ -291,7 +291,6 @@ function cpuType3() {
         case 4: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R4Url);
             break;
-
         case 5: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType3R5Url);
             break;
@@ -352,7 +351,7 @@ function cpuType3() {
 
 function cpuType4() {
     let a = randomInt(1, 10);
-    
+
     let newCpu;
     switch (a) {
         case 1: 
@@ -370,7 +369,6 @@ function cpuType4() {
         case 4: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R4Url);
             break;
-
         case 5: 
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R5Url);
             break;
@@ -395,7 +393,7 @@ function cpuType4() {
             newCpu = PIXI.extras.AnimatedSprite.fromFrames(cpuType4R10Url);
             break;
     }
-    
+
     createCpu(newCpu);
     newCpu.point = 40;
     let step = 1;

@@ -115,7 +115,6 @@ let cpuType2R4Url = [
     "images/marathon/cpu_type2_1_r_4.png",
     "images/marathon/cpu_type2_2_r_4.png"
 ];
-
 let cpuType2R5Url = [
     "images/marathon/cpu_type2_1_r_5.png",
     "images/marathon/cpu_type2_2_r_5.png"
@@ -208,7 +207,6 @@ let cpuType4R4Url = [
     "images/marathon/cpu_type4_1_r_4.png",
     "images/marathon/cpu_type4_2_r_4.png"
 ];
-
 let cpuType4R5Url = [
     "images/marathon/cpu_type4_1_r_5.png",
     "images/marathon/cpu_type4_2_r_5.png"

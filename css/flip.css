@@ -161,7 +161,6 @@ html, body {
 	/* padding-top: 130px; */
 }
 .front {
-	transform: rotateY(0deg);
 	-webkit-transform: rotateY(0deg);
 	-ms-transform: rotateY(0deg);
 	z-index: 2;

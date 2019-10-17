@@ -1,6 +1,7 @@
 /* global PIXI */
 
 // Aliases
+
 const Container = PIXI.Container;
 const Application = PIXI.Application;
 const loader = PIXI.loader;
@@ -337,7 +338,6 @@ const lost = () => {
 const preLost = () => {
     gameSpeed = 0;
 
-    localStorage.setItem("score", gameScore);
     // Remove the fly click listener
     app.view.removeEventListener('click', flyClickHandler);
 

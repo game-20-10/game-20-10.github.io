@@ -48,6 +48,11 @@ function setCookieGame(val) {
     setCookie('turnPlay', 0, 1);
     location.replace('./index.html');
 }
+// Set cookie team
+function setCookieTeam(val) {
+    setCookie('team', val, 1);
+    location.replace("./" + getCookie('game') + ".html");
+}
 // Redirect to neccessary page
 function redirect() {
     if (checkCookie('game') === false) {
