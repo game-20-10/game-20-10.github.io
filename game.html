@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <style>
+        .mt-28 {
+            margin-top: 28px;
+            color: white;
+            font-weight: bold;
+            font-size: 21px;
+            border: 5px solid #d3325f;
+            height: 309px;
+            padding: 8px
+        }
+
+        .display-1 {
+            font-family: "Courgette", cursive;
+        }
+
+        body {
+            color: white;
+            background-color: #30302f;
+        }
+
+        .blue {
+            color: #dbf065;
+        }
+
+        .primary-color {
+            color: #d3325f;
+        }
+
+        .primary-color-2 {
+            color: white;
+        }
+
+        .choose-game {
+            text-align: center;
+            padding-bottom: 16px;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+        }
+
+        #header {
+            min-height: calc(100vh - 20px);
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(images/choose_game/game_bg_2.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .height-90 {
+            min-height: calc(100vh - 20px);
+        }
+
+        .banner h1 {
+            border-top: 6px dotted #c9c1ac;
+            border-bottom: 6px dotted #c9c1ac;
+            animation: fromLeft;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fromLeft {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        50% {
+            transform: translateX(30px);
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }
+
+        @keyframes fromRight {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        50% {
+            transform: translateX(-30px);
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        }
+
+        .header-link {
+            display: inline-block;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            background: #c9c1ac;
+            border-radius: 10px;
+            transition: all 2s ease;
+            animation: fromBottom;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .header-link {
+        color: #242424;
+        }
+
+        @keyframes fromBottom {
+        0% {
+            transform: translateY(-10px);
+        }
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(-10px);
+        }
+        }
+        .item-container {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+            transition: all 1s ease;
+        }
+        .item-img {
+            transition: all 1s ease;
+        }
+
+        .item-container:hover .item-img {
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
+
+        .item-link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d3325f;
+            font-size: 2rem;
+            border-top: 3px solid #d3325f;
+            border-bottom: 3px solid #d3325f;
+            transition: all 2s ease;
+            opacity: 0;
+        }
+
+        .item-container:hover .item-link {
+            opacity: 1;
+        }
+
+        .item-link:hover {
+            color: #c9c1ac;
+            border: 3px solid #c9c1ac;
+            background: #c9c1ac;
+            color: #242424;
+        }
+
+        .item-container:hover {
+            outline: 10px solid #d3325f;
+            outline-offset: 0.8rem;
+        }
+    </style>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+        // Set cookie game
+        function setCookieGame(val) {
+            setCookie('game', val, 1);
+            setCookie('turnPlay', 0, 1);
+            location.replace('./index.html');
+        }
+    </script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="row height-90 align-items-center justify-content-center">
+                <div class="col">
+                    <div class="banner text-center">
+                        <h1 class="display-1 text-capitalize w-50 mx-auto font-weight-bold">
+                            <small class="blue font-weight-bold">Happy</small><strong class="primary-color-2">Woman's
+                                Day 20-10</strong>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5" id="special-items">
+        <div class="container my-5">
+            <h1 class="choose-game">Chọn game nào cả nhà ơi...!</h1>
+            <div class="row parent-container">
+                <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
+                    <div class="item-container">
+                        <img src="images/choose_game/marathon.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <div onclick="setCookieGame('marathon')">
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Chạy marathon</h1>
+                        </div>
+                    </div>
+                    <p class="mt-28">Game marathon là game thi chạy giữa những người với nhau, người chơi có thể chạy
+                        chính giữa, bên trái hoặc bên phải sao cho không va chạm với người chạy cùng, nếu va vào thì end
+                        game.</p>
+                </div>
+                <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
+                    <div class="item-container">
+                        <img src="images/choose_game/shooter.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <div onclick="setCookieGame('bird')">
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Bắn chim</h1>
+                        </div>
+                    </div>
+                    <p class="mt-28">Game bắn chim là game giúp người chơi bắn hạ những con chim đang bay trong khoảng
+                        thời gian là 60s, người chơi có 9 vị trí bấm trên màn hình, bấm vào 9 vị trí chứ không phải bấm
+                        vào chim đang bay. Bắn được càng nhiều chim thì điểm số sẽ càng cao.</p>
+                </div>
+                <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
+                    <div class="item-container">
+                        <img src="images/choose_game/chim-ca-tung.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <div onclick="setCookieGame('shooter')">
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Chim cà tưng</h1>
+                        </div>
+                    </div>
+                    <div class="intro">
+                        <p class="mt-28">Game giống như game Flappy Bird...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    <script>
+        $(document).ready(function() { 
+            $("#header").ripples({
+                dropRadius: 12,
+                perturbance: 0.0000001,
+            });    
+        });
+    </script>
+</body>
+
+</html>

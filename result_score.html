@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <script>
+        function handleBack() {
+            location.replace('./index.html');
+        }
+        // sort table
+        function sortTable() {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("tableResult");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[1];
+                    y = rows[i + 1].getElementsByTagName("TD")[1];
+                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-image: url('./images/result/c.jpg');
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+            color: white;
+        }
+        .main {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            font-family: 'Arial', sans-serif;
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+        button {
+            position: absolute;
+            right: 110px;
+            width: 250px;
+            height: 100px;
+            border-radius: 20px;
+            background-color: transparent;
+            color: #0e4e70;
+            font-size: 30px;
+            font-weight: bolder;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+        }
+        button:hover {
+            border-color: transparent;
+            box-shadow: 1px 1px 15px 15px #3c87ae;
+            color: #3c87ae;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;            
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7);
+            font-size: 20px;
+            /* box-shadow: 1px 1px 20px 20px #3c87ae; */
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+        th, td {
+            height: 70px;
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>GAME SCORE CHART</h1>
+        <table id="tableResult">
+            <tr>
+                <th>TEAM NAME</th>
+                <th>SCORE</th>
+            </tr>
+            <tr>
+                <td>TEAM 1</td>
+                <td id="js-score-1">0</td>
+            </tr>
+            <tr>
+                <td>TEAM 2</td>
+                <td id="js-score-2">0</td>
+            </tr>
+            <tr>
+                <td>TEAM 3</td>
+                <td id="js-score-3">0</td>
+            </tr>
+            <tr>
+                <td>TEAM 4</td>
+                <td id="js-score-4">0</td>
+            </tr>
+        </table>
+        <button onclick="handleBack()">BACK</button>
+    </div>
+
+    <script>
+        if (Number(getCookie('turnPlay')) <= 4) {
+            switch (getCookie('team')) {
+                case 'team1':
+                    setCookie('scoreTeam1', getCookie('result'), 1);
+                    deleteCookie('team');
+                    break;
+                case 'team2':
+                    setCookie('scoreTeam2', getCookie('result'), 1);
+                    deleteCookie('team');
+                    break;
+                case 'team3':
+                    setCookie('scoreTeam3', getCookie('result'), 1);
+                    deleteCookie('team');
+                    break;
+                case 'team4':
+                    setCookie('scoreTeam4', getCookie('result'), 1);
+                    deleteCookie('team');
+                    break;
+            }
+            if (checkCookie('scoreTeam1')) {
+                document.getElementById('js-score-1').innerHTML = getCookie('scoreTeam1');
+            }
+            if (checkCookie('scoreTeam2')) {
+                document.getElementById('js-score-2').innerHTML = getCookie('scoreTeam2');
+            }
+            if (checkCookie('scoreTeam3')) {
+                document.getElementById('js-score-3').innerHTML = getCookie('scoreTeam3');
+            }
+            if (checkCookie('scoreTeam4')) {
+                document.getElementById('js-score-4').innerHTML = getCookie('scoreTeam4');
+            }
+            sortTable();
+
+            if (Number(getCookie('turnPlay')) == 4) {
+                deleteCookie('game');
+                deleteCookie('team');
+                deleteCookie('turnPlay');
+                deleteCookie('result');
+                deleteCookie('scoreTeam1');
+                deleteCookie('scoreTeam2');
+                deleteCookie('scoreTeam3');
+                deleteCookie('scoreTeam4');
+            }
+        }
+    </script>
+</body>
+
+</html>

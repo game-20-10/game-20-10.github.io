@@ -1,0 +1,235 @@
+html, body {
+    padding: 0;
+	margin: 0;
+	height: 100%;
+}
+.row {
+    width: 64%;
+    margin: auto;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-ms-perspective: 1000;
+	perspective: 1000;
+	transform: perspective(1000px);
+	-ms-transform: perspective(1000px);
+	-moz-transform: perspective(1000px);
+	transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d; 
+	-ms-transform-style: preserve-3d; 
+
+	/* border: 3px solid #ccc; */
+}
+
+/* flip the pane when hovered */
+/*.flip-container:hover .flipper, .flip-container.hover .flipper, #flip-toggle.flip .flipper {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}*/
+			
+/* START: Accommodating for IE */
+.flip-container:hover .back, .flip-container.hover .back {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+.flip-container:hover .front, .flip-container.hover .front {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+/* END: Accommodating for IE */
+
+.flip-container, .front, .back {
+	width: 188px;
+	height: 427px;
+}
+
+/* flip speed goes here */
+.flipper {
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-ms-transition: 0.6s;
+	transform: perspective(1000px);
+	-moz-transition: 0.6s;
+	-moz-transform: perspective(1000px);
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	-webkit-transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateY(0deg);
+
+	-moz-transition: 0.6s;
+	-moz-transform-style: preserve-3d;
+	-moz-transform: rotateY(0deg);
+
+	-o-transition: 0.6s;
+	-o-transform-style: preserve-3d;
+	-o-transform: rotateY(0deg);
+
+	-ms-transition: 0.6s;
+	-ms-transform-style: preserve-3d;
+	-ms-transform: rotateY(0deg);
+
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	transform: rotateY(0deg);
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+
+
+/* vertical */
+.vertical.flip-container {
+	position: relative;
+}
+
+.vertical .back {
+	-webkit-transform: rotateX(180deg);
+	-moz-transform: rotateX(180deg);
+	-ms-transform: rotateX(180deg);
+	transform: rotateX(180deg);
+}
+
+.vertical.flip-container .flipper {
+	-webkit-transform-origin: 100% 213.5px;
+	-moz-transform-origin: 100% 213.5px;
+	-ms-transform-origin: 100% 213.5px;
+	transform-origin: 100% 213.5px; /* half of height */
+}
+
+/*
+.vertical.flip-container:hover .flipper {
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	-ms-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+}
+*/
+
+/* START: Accommodating for IE */
+.vertical.flip-container:hover .back, .vertical.flip-container.hover .back {
+	-webkit-transform: rotateX(0deg);
+	-moz-transform: rotateX(0deg);
+	-o-transform: rotateX(0deg);
+	-ms-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.vertical.flip-container:hover .front, .vertical.flip-container.hover .front {
+	-webkit-transform: rotateX(-180deg);
+	-moz-transform: rotateX(-180deg);
+	-o-transform: rotateX(-180deg);
+	transform: rotateX(-180deg);
+}
+/* END: Accommodating for IE */
+
+/* .cl-1 {
+	width: 33%;
+}
+.cl-2 {
+	width: 33%;
+}
+.cl-3 {
+	width: 33%;
+} */
+.row-cl {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	/* margin-top: 95px; */
+	padding-top: 150px;
+}
+.front {
+	-webkit-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	z-index: 2;
+
+	/* background: lightgreen url('dwflip.jpg'); */
+	/* background: lightblue url('dwflip.jpg'); */
+	/* border: 1px solid red; */
+
+	/* border: 3px solid #ccc; */
+}
+
+/* back, initially hidden pane */
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+
+	/* background-color: aquamarine; */
+}
+.back {
+	text-align: center;
+}
+.back p {
+    padding: 52% 0px;
+    font-size: 30px;
+}
+.title h1 {
+	text-align: center;
+	color: white;
+}
+.front img {
+	width: 186px;
+    height: 395px;
+	/* height: 90%;
+    width: 100%; */
+}
+.back img {
+	width: 186px;
+	height: 425px;
+	opacity: 0.5;
+	/* height: 90%;
+    width: 100%; */
+}
+.back p {
+	position: absolute;
+    top: 130px;
+    left: 60px;
+    color: white;
+}
+.text {
+	text-align: center;
+	font-size: 25px;
+	font-weight: 900;
+	color: white;
+}
+.container {
+	/* background-image: url("background.jpg"); */
+	height: 100%;
+	background-repeat: no-repeat;
+	background: rgba(0, 0, 0, .65) url('../images/team/background.jpg');
+	background-blend-mode: darken;
+}
