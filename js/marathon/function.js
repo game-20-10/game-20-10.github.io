@@ -520,7 +520,7 @@ function createCpu(newCpu) {
 
 // Function to make cpu move
 function cpuRunning(runner, step, lane) {
-    if (time === 60) {
+    if (time === 30) {
         isGameOver = true;
         runner.stop();
         playerAnimation.stop();

@@ -1,5 +1,5 @@
 // Variables
-let GAME_TIME = 30;
+let GAME_TIME = 20;
 let scoreText_2 = '00000';
 let boomNum = 3;
 let boomFlag = [false, false, false];
