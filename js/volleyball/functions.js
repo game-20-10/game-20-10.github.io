@@ -15,7 +15,6 @@ function ballWall() {
 
     if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {
         setCookieFail(totalScore);
-        endGame();
     }
 }
 
