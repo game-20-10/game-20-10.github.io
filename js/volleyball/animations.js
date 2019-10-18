@@ -1,7 +1,8 @@
 // Front jump animation
 function frontAnimation() {
+    
     person.textures = frontAnimateTextures;
-    person.animationSpeed = 0.09;
+    person.animationSpeed = 0.1;
     person.gotoAndPlay(2);
     person.gotoAndPlay(0);
     person.loop = false;
@@ -9,7 +10,8 @@ function frontAnimation() {
 }
 
 // Right jump animation
-function rightSideAnimation() {    
+function rightSideAnimation() {   
+     
     person.textures = rightAnimateTextures;
     person.animationSpeed = 0.09;
     person.gotoAndPlay(2);
@@ -21,6 +23,7 @@ function rightSideAnimation() {
 
 // Left jump animation
 function leftSideAnimation() {
+    
     person.textures = leftAnimateTextures;
     person.animationSpeed = 0.09;
     person.gotoAndPlay(2);
@@ -32,6 +35,7 @@ function leftSideAnimation() {
 
 // Person loop
 function personAnimationLoop(delta) {
+    
     // Person moving
     person.x += person.vx * delta;
     person.y += person.vy * delta;
@@ -91,14 +95,14 @@ function ballAnimationLoop(delta) {
     ball.y += ball.vy * delta;
     ball.vy += ballGravity;
     // If ball is too fast
-    if (ball.vx >= 2.5) {
-        ball.vx -= 0.04;
+    if (ball.vx >= 8) {
+        ball.vx -= 5;
     }
-    if (ball.vx <= -2.5) {
-        ball.vx += 0.04;
+    if (ball.vx <= -8) {
+        ball.vx +=  5;
     }
-    if (ball.vy <= -3) {
-        ball.vy += 0.05;
+    if (ball.vy <= -8) {
+        ball.vy +=  5;
     }
     // Ball shape
     ballShape.x = ball.x;

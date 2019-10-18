@@ -1,5 +1,8 @@
 // Sprite variables
 let startBar,
+    time,
+    runTime = 30,
+    textTime,
     title,
     id,
     person,

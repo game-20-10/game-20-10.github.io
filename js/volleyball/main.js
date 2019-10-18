@@ -30,6 +30,7 @@ app.stage.addChild(backgroundScreen, gameScreen, resultScreen);
 loader
     .add(["../../images/volleyball/sprites.json", "../../images/volleyball/score-text.png"])
     .add([
+        "../../images/volleyball/images.jpg",
         "../../images/volleyball/avatar_1.png",
         "../../images/volleyball/avatar_2.png",
         "../../images/volleyball/avatar_3.png",
@@ -77,16 +78,22 @@ function setup(loader, res) {
 
     // State
     state = gamePause;
+
+    
+    
     app.ticker.add(delta => {
         state(delta);
+        
     });
+
+   
 }
 
 // Game Loop
 function gameLoop(delta) {
+
     // Person animation
     personAnimationLoop(delta);
-
     // Ball can't go out of the game's screen
     ballWall(delta);
 
@@ -97,8 +104,11 @@ function gameLoop(delta) {
     personBallCollision();
 }
 
+
 // Game Pause
 function gamePause(delta) {
+    
+  
     // Next btn
     fadeAnimation(nextBtn, delta);
 
@@ -110,6 +120,7 @@ function gamePause(delta) {
 
 // Game Over
 function gameOver(delta) {
+    
     // Restart btn
     blinkAnimation(restartText, delta);
 }

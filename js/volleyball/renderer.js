@@ -1,5 +1,6 @@
 // Render Introduce Screen
 function renderIntroduceScreen() {
+    
     // Render intro background
     introBackground = newSprite(
         id["intro-background.png"],
@@ -25,18 +26,19 @@ function renderIntroduceScreen() {
     backgroundScreen.addChild(startBar);
     setInteractive(startBar, true);
 
+    
     // Next btn
-    nextBtn = newSprite(
-        id["start-btn.png"],
-        backgroundScreen,
-        0.25,
-        undefined,
-        undefined,
-        0.5,
-        0.5,
-        120,
-        startBar.y + startBar.height / 2
-    );
+    nextBtn = new Text("Quẩy lên nào...",{
+        fill: 0xffffff,
+        fontSize: 80,
+        fontWeight: "bold"
+    })
+    nextBtn.scale.set(0.25);
+    nextBtn.x = backgroundScreen.width / 2 - nextBtn.width / 2;
+    nextBtn.y = 5;
+    nextBtn.y = backgroundScreen.height / 2 + 70;
+    backgroundScreen.addChild(nextBtn);
+
 
     // Tutorial Background
     tutorialBackground = newSprite(id["game-background.png"], backgroundScreen, 0, 240, 240, 0, 0, 0, 0, false);
@@ -100,8 +102,29 @@ function renderIntroduceScreen() {
 
 // Render Game Screen
 function renderGameScreen() {
+    
     // Game Background
     gameBackground = newSprite(id["game-background.png"], gameScreen, 1, LOGICAL_WIDTH, LOGICAL_HEIGHT, 0, 0, 0, 0);
+
+
+    // time = new Text("Time :" , {
+    //     fill: 0xffffff,
+    //     fontSize: 55,
+    //     fontWeight: "bold"
+    // })
+    // time.scale.set(0.25);
+    // time.x = (gameScreen.width - 70);
+    // time.y = 5;
+
+    // textTime = new Text(runTime , {
+    //     fill: 0xffffff,
+    //     fontSize: 55,
+    //     fontWeight: "bold"
+    // })
+    // textTime.scale.set(0.25);
+    // textTime.x = (gameScreen.width - 25);
+    // textTime.y = 5;
+
 
     // Score
     scoreText = new Text("score: ", {
@@ -195,6 +218,7 @@ function renderGameScreen() {
 
 // Render result screen
 function renderResultScreen() {
+    
     // Result Background
     resultBackground = newSprite(id["game-background.png"], resultScreen, 0, 240, 240, 0, 0, 0, 0);
 

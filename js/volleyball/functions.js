@@ -1,5 +1,6 @@
 // Ball collides with walls
 function ballWall() {
+    
     if (ball.x >= LOGICAL_WIDTH - ball.width / 2) {
         ball.x = LOGICAL_WIDTH - ball.width / 2;
         ball.vx = -Math.abs(ball.vx) * 0.9;
@@ -13,16 +14,17 @@ function ballWall() {
         ball.vy = Math.abs(ball.vy) * 0.8;
     }
 
-    if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {        
+    if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {
         endGame();
     }
 }
-
+  
 // After game over => show result
 function endGame() {
+    
     currentScreen++;
     gameScreen.visible = false;
-	setCookieFail(totalScore);
+    setCookieFail(totalScore);
     state = gameOver;
     totalScoreText.text = totalScore;
     localStorage.setItem("score" , totalScore);
@@ -30,6 +32,7 @@ function endGame() {
 
 // Reset new game
 function resetNewGame() {
+    
     resultScreen.visible = false;
     gameScreen.visible = true;
     state = gameLoop;
@@ -38,6 +41,7 @@ function resetNewGame() {
     currentScreen = 3;
     setupBall();
     setupPerson();
+    
 }
 
 // Person collides with ball
@@ -75,7 +79,6 @@ function personBallCollision() {
             // Add score if hit
             totalScore += SCORE_PER_HIT;
             scoreNumText.text = totalScore;
-
             // Wait 50 milisec for the next hit
             wait(50).then(() => {
                 hit = false;
@@ -93,6 +96,7 @@ function screenDisplay() {
 
 // Position of ball
 function setupBall() {
+    
     ball.x = -50;
     ball.y = 50;
     ball.vx = 1 + Math.abs(randomV(0, 40));
@@ -101,6 +105,7 @@ function setupBall() {
 
 // Position of person
 function setupPerson() {
+    
     person.position.set(
         LOGICAL_WIDTH / 2 - person.width / 2,
         LOGICAL_HEIGHT - person.height / 2

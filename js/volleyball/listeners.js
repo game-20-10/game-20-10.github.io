@@ -1,5 +1,6 @@
 // Event Listeners
 function listenToEvent() {
+    
     // Next Btn
     startBar.on("pointerdown", () => {
         currentScreen++;
@@ -12,7 +13,10 @@ function listenToEvent() {
             }
         }, 1000);
         state = gameLoop;
+        
     });
+
+   
 
     // Start btn
     // startBtn.on("pointerdown", () => {
