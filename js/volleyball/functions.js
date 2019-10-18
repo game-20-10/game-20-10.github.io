@@ -18,16 +18,6 @@ function ballWall() {
     }
 }
 
-// After game over => show result
-function endGame() {
-    currentScreen++;
-    gameScreen.visible = false;
-    resultScreen.visible = true;
-    state = gameOver;
-    totalScoreText.text = totalScore;
-    localStorage.setItem("score" , totalScore);
-}
-
 // Reset new game
 function resetNewGame() {
     resultScreen.visible = false;
