@@ -13,11 +13,19 @@ function ballWall() {
         ball.vy = Math.abs(ball.vy) * 0.8;
     }
 
-    if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {
-        setCookieFail(totalScore);
-		gameScreen.visible = false;
-		state = gameOver;
+    if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {        
+        endGame();
     }
+}
+
+// After game over => show result
+function endGame() {
+    currentScreen++;
+    gameScreen.visible = false;
+	setCookieFail(totalScore);
+    state = gameOver;
+    totalScoreText.text = totalScore;
+    localStorage.setItem("score" , totalScore);
 }
 
 // Reset new game
