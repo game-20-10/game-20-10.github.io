@@ -102,13 +102,33 @@ function defautScreen() {
     background.width = 240;
     background.height = 240;
 
-    // let logo = Sprite.fromImage(logoUrl);
-    // logo.width = 235;
-    // logo.height = 118;
-    // logo.x = background.width / 2 - logo.width / 2;
-    // logo.y = 0;
+    let logo = Sprite.fromImage(logoUrl);
+    logo.width = 125;
+    logo.height = 100;
+    logo.x = (background.width / 2 - logo.width / 2) + 50;
+    logo.y = 0;
 
-    gameScene.addChild(background);
+    textLogo = new Text("WOMEN'S DAY ", {
+        fontSize: 26,
+        fill: 0xe55495,
+        fontWeight: 'bold',
+        fontFamily: "Agency FB"
+    });
+
+    textLogo.y = 25;
+    textLogo.x = 30;
+
+    textLogo2 = new Text("20/10", {
+        fontSize: 35,
+        fill: 0xec1f21,
+        fontWeight: 'bold',
+        fontFamily: "Alfa Slab One"
+    });
+
+    textLogo2.y = 65;
+    textLogo2.x = 120;
+
+    gameScene.addChild(background, logo);
     let buttonStart = addGraphic(0x000000, 0.8, 0, 0, 240, 35);
     buttonStart.y = 187;
     buttonStart.buttonMode = true;

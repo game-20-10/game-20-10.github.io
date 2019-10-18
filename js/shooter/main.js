@@ -1,5 +1,5 @@
 // Variables
-let GAME_TIME = 60;
+let GAME_TIME = 30;
 let scoreText_2 = '00000';
 let boomNum = 3;
 let boomFlag = [false, false, false];
@@ -152,8 +152,8 @@ let endStyle = new PIXI.TextStyle({
 let startStyle = new PIXI.TextStyle({
     fontFamily: "japanFont",
     fontSize: 36,
-    fill: "#fc1a0a",
-    stroke: '#a80a1d',
+    fill: "#ffeb0a",
+    stroke: '#000000',
     strokeThickness: 7,
     fontWeight: 900,
     letterSpacing: 10
@@ -256,21 +256,21 @@ function hitRect(r1, r2) {
 
 // Waiting for playing game
 function waitingGame() {
-    startText = new Text("Happy 20-10 <3", startStyle);
-    startText.x = 400;
-    startText.y = 210;
-    gameScene.addChild(startText) ;
-    let moveStartText = setInterval( function () {
-        if (startText.x > 25) {
-            startText.x -= 1.5;
-        };
-    }, 1);
+    // startText = new Text("Happy 20-10 <3", startStyle);
+    // startText.x = 400;
+    // startText.y = 210;
+    // gameScene.addChild(startText) ;
+    // let moveStartText = setInterval( function () {
+    //     if (startText.x > 25) {
+    //         startText.x -= 1.5;
+    //     };
+    // }, 1);
     rect.forEach(function(rectNum, index) {
         rectNum.visible = false;
     });  
     setTimeout(function() {
-        startText.visible = false;
-        clearInterval(moveStartText);
+        // startText.visible = false;
+        // clearInterval(moveStartText);
         time.visible = true;
         timeText.visible = true;
         timeNumber.visible = true;
@@ -279,7 +279,7 @@ function waitingGame() {
         rect.forEach(function(rectNum, index) {
             rectNum.visible = true;
         });
-    }, 1800)
+    }, 100)
 };
 
 // Waiting the result
@@ -328,22 +328,20 @@ function waitingEndGame() {
 
     endText = new Text('Hết giờ òy...', startStyle);
     endText.x = 400;
-    endText.y = 220;
+    endText.y = 90;
     endText.buttonMode = true;
     endText.interactive = true;
     gameScene.addChild(endText);
     let moveEndText = setInterval( function () {
-        if (endText.x > 68) {
+        if (endText.x > 70) {
             endText.x -= 1.5;
         };
     }, 1);
-    endText.on('pointertap', function() {
-        clearInterval(moveEndText);
-        gameScene.visible = false;
-        endText.visible = false;
-        setCookieFail(score);
-        addResultScreen();
-    });       
+    clearInterval(moveEndText);
+    gameScene.visible = false;
+    endText.visible = false;
+    setCookieFail(score);
+    addResultScreen();
 };
 
 // Add main element
@@ -358,7 +356,7 @@ function addElement() {
         fontFamily: "japanFont",
         fontSize: 30,
         fontWeight: 900,
-        fill: '#fadb52',
+        fill: '#ffeb0a',
         stroke: '#000000',
         strokeThickness: 7,
         letterSpacing: -1
@@ -374,7 +372,7 @@ function addElement() {
         fontFamily: "japanFont",
         fontSize: 40,
         fontWeight: 900,
-        fill: '#fadb52',
+        fill: '#ffeb0a',
         stroke: '#000000',
         strokeThickness: 10,
         letterSpacing: 3
@@ -384,7 +382,7 @@ function addElement() {
         fontFamily: "japanFont",
         fontWeight: 900,
         fontSize: 40,
-        fill: '#fadb52',
+        fill: '#ffeb0a',
         stroke: '#000000',
         strokeThickness: 10,
         letterSpacing: 7
@@ -649,14 +647,14 @@ function addUfo() {
     ufoBlueLeft.push(ufo_blue_left_1);
     gameScene.addChild(ufo_blue_left_1);
 
-    ufo_blue_left_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/left_1.png"].texture);
+    ufo_blue_left_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/left_3.png"].texture);
     ufo_blue_left_2.x = -220;
     ufo_blue_left_2.y = 230;
     ufo_blue_left_2.isplay = false;
     ufoBlueLeft.push(ufo_blue_left_2);
     gameScene.addChild(ufo_blue_left_2);
 
-    ufo_blue_right_1 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/right_1.png"].texture); 
+    ufo_blue_right_1 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/right_4.png"].texture); 
     ufo_blue_right_1.x = 650;
     ufo_blue_right_1.y = 150;
     ufo_blue_right_1.isplay = false;
@@ -681,7 +679,7 @@ function addUfo() {
     ufoYellowLeft.push(ufo_yellow_left_1);
     gameScene.addChild(ufo_yellow_left_1);
 
-    ufo_yellow_left_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/left_2.png"].texture); 
+    ufo_yellow_left_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/left_5.png"].texture); 
     ufo_yellow_left_2.x = -270;
     ufo_yellow_left_2.y = 230;
     ufo_yellow_left_2.isplay = false;
@@ -763,7 +761,7 @@ function addUfo() {
     clockRight.push(clock_right_1);
     gameScene.addChild(clock_right_1);
 
-    clock_right_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/right_4.png"].texture); 
+    clock_right_2 = new PIXI.Sprite(PIXI.loader.resources["images/shooter/right_3.png"].texture); 
     clock_right_2.x = 650;
     clock_right_2.y = 350;
     clock_right_2.isplay = false;
@@ -2691,11 +2689,11 @@ function displayUfo(itemUfo) {
                 case ufoBlueLeft: {
                     if (itemUfo[i].x < 620) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x += 6;
+                            itemUfo[i].x += 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x += 7;
+                            itemUfo[i].x += 4;
                         } else {
-                            itemUfo[i].x += 8;
+                            itemUfo[i].x += 5;
                         };
                         let denta = itemUfo[i].tmp ? itemUfo[i].tmp : 0.004;
                         itemUfo[i].y = denta*itemUfo[i].x*itemUfo[i].x - 1.1*itemUfo[i].x + 150;
@@ -2712,11 +2710,11 @@ function displayUfo(itemUfo) {
                 case ufoBlueRight: {
                     if (itemUfo[i].x > -100) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x -= 6;
+                            itemUfo[i].x -= 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x -= 7;
+                            itemUfo[i].x -= 4;
                         } else {
-                            itemUfo[i].x -= 8;
+                            itemUfo[i].x -= 5;
                         };
                         let denta = itemUfo[i].tmp ? itemUfo[i].tmp : 0.002;
                         itemUfo[i].y = denta*itemUfo[i].x*itemUfo[i].x - 1.2*itemUfo[i].x + 250;
@@ -2733,11 +2731,11 @@ function displayUfo(itemUfo) {
                 case ufoYellowLeft: {
                     if (itemUfo[i].x < 620) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x += 6;
+                            itemUfo[i].x += 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x += 7;
+                            itemUfo[i].x += 4;
                         } else {
-                            itemUfo[i].x += 8;
+                            itemUfo[i].x += 5;
                         }
                         let denta = itemUfo[i].tmp ? itemUfo[i].tmp : 0.004;
                         itemUfo[i].y = denta*itemUfo[i].x*itemUfo[i].x - 1.1*itemUfo[i].x + 150;
@@ -2754,11 +2752,11 @@ function displayUfo(itemUfo) {
                 case ufoYellowRight: {
                     if (itemUfo[i].x > -100) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x -= 6;
+                            itemUfo[i].x -= 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x -= 7;
+                            itemUfo[i].x -= 4;
                         } else {
-                            itemUfo[i].x -= 8;
+                            itemUfo[i].x -= 5;
                         };
                         let denta = itemUfo[i].tmp ? itemUfo[i].tmp : 0.002;
                         itemUfo[i].y = denta*itemUfo[i].x*itemUfo[i].x - 1.2*itemUfo[i].x + 250;
@@ -2775,11 +2773,11 @@ function displayUfo(itemUfo) {
                 case ufoRedLeft: {
                     if (itemUfo[i].x < 500) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x += 6;
+                            itemUfo[i].x += 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x += 7;
+                            itemUfo[i].x += 4;
                         } else {
-                            itemUfo[i].x += 8;
+                            itemUfo[i].x += 5;
                         };
                     } else {
                         itemUfo[i].x = -100;
@@ -2791,11 +2789,11 @@ function displayUfo(itemUfo) {
                 case ufoRedRight: {
                     if (itemUfo[i].x > -100) {
                         if (GAME_TIME >= 60) {
-                            itemUfo[i].x -= 6;
+                            itemUfo[i].x -= 3;
                         } else if (GAME_TIME > 30) {
-                            itemUfo[i].x -= 7;
+                            itemUfo[i].x -= 4;
                         } else {
-                            itemUfo[i].x -= 8;
+                            itemUfo[i].x -= 5;
                         };
                     } else {
                         itemUfo[i].x = 600;
@@ -2806,7 +2804,7 @@ function displayUfo(itemUfo) {
 
                 case clockLeft: {
                     if (itemUfo[i].x < 520) {
-                        itemUfo[i].x += 10;
+                        itemUfo[i].x += 6;
                     }  else {
                         itemUfo[i].x = -100;
                         itemUfo[i].isplay = false;
@@ -2816,7 +2814,7 @@ function displayUfo(itemUfo) {
 
                 case clockRight: {
                     if (itemUfo[i].x > -120) {
-                        itemUfo[i].x -= 10;
+                        itemUfo[i].x -= 6;
                     } else {
                         itemUfo[i].x = 600;
                         itemUfo[i].isplay = false;
@@ -2826,7 +2824,7 @@ function displayUfo(itemUfo) {
 
                 case boomLeft: {
                     if (itemUfo[i].x < 520) {
-                        itemUfo[i].x += 10;
+                        itemUfo[i].x += 6;
                     }  else {
                         itemUfo[i].x = -100;
                         itemUfo[i].isplay = false;
@@ -2835,7 +2833,7 @@ function displayUfo(itemUfo) {
                     break;
                 case boomRight: {
                     if (itemUfo[i].x > -120) {
-                        itemUfo[i].x -= 10;
+                        itemUfo[i].x -= 6;
                     } else {
                         itemUfo[i].x = 600;
                         itemUfo[i].isplay = false;
@@ -2845,7 +2843,7 @@ function displayUfo(itemUfo) {
 
                 case bossLeft: {
                     if (itemUfo[i].x < 500) {
-                        itemUfo[i].x += 12;
+                        itemUfo[i].x += 6;
                     }  else {
                         itemUfo[i].x = -120;
                         itemUfo[i].isplay = false;
@@ -2855,7 +2853,7 @@ function displayUfo(itemUfo) {
 
                 case bossRight: {
                     if (itemUfo[i].x > -150) {
-                        itemUfo[i].x -= 12;
+                        itemUfo[i].x -= 6;
                     } else {
                         itemUfo[i].x = 620;
                         itemUfo[i].isplay = false;
@@ -3205,18 +3203,18 @@ function addResultScreen() {
         gameEnd.visible = false;
         gameScene.visible = true;
         gameScene.removeChildren();
-        gameScene.addChild(startText);
-        startText.visible = true;
-        startText.x = 400;
-        startText.y = 200;
-        let moveStartText = setInterval( function () {
-            if (startText.x > 15) {
-                startText.x -= 1.5;
-            };
-        }, 1);
+        // gameScene.addChild(startText);
+        // startText.visible = true;
+        // startText.x = 400;
+        // startText.y = 200;
+        // let moveStartText = setInterval( function () {
+        //     if (startText.x > 15) {
+        //         startText.x -= 1.5;
+        //     };
+        // }, 1);
         setTimeout(function() {
-            startText.visible = false;
-            clearInterval(moveStartText);
+            // startText.visible = false;
+            // clearInterval(moveStartText);
             ufoBlueLeft.forEach(function(item, index) {
                 item.visible = true;
                 item.x = -100;
@@ -3271,13 +3269,13 @@ function addResultScreen() {
                 };
             }, 1200);
             playAgain();          
-        }, 1800);
+        }, 100);
     });
 };
 
 // Play again
 function playAgain() {
-    GAME_TIME = 60;
+    GAME_TIME = 30;
     score = 0;
     scoreText_2 = '00000'
     gameScene.addChild(time);

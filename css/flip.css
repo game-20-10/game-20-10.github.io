@@ -53,8 +53,8 @@ html, body {
 /* END: Accommodating for IE */
 
 .flip-container, .front, .back {
-	width: 188px;
-	height: 427px;
+	width: 200px;
+	height: 450px;
 }
 
 /* flip speed goes here */
@@ -155,10 +155,11 @@ html, body {
 /* END: Accommodating for IE */
 
 .row-cl {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	/* padding-top: 130px; */
+    display: flex;
+    justify-content: space-between;
+    width: 83%;
+    /* padding-top: 130px; */
+    margin: auto;
 }
 .front {
 	-webkit-transform: rotateY(0deg);
@@ -191,15 +192,25 @@ html, body {
 	text-align: center;
 	color: white;
 }
+/* 231px */
 .front img {
-	width: 186px;
-    height: 395px;
+	width: 200px;
+    height: 415px;
 }
 .back img {
+	width: 200px;
+	height: 452px;
+	opacity: 0.5;
+}
+/* .front img {
+	width: 186px;
+    height: 395px;
+} */
+/* .back img {
 	width: 186px;
 	height: 425px;
 	opacity: 0.5;
-}
+} */
 .back p {
 	position: absolute;
     top: 130px;

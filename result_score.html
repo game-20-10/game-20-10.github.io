@@ -5,34 +5,6 @@
     <meta charset="UTF-8">
     <title>Result</title>
     <script type="text/javascript" src="./js/index.js"></script>
-    <script>
-        function handleBack() {
-            location.replace('./index.html');
-        }
-        // sort table
-        function sortTable() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("tableResult");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 0; i < rows.length; i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("TD")[1];
-                    y = rows[i + 1].getElementsByTagName("TD")[1];
-                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
-                        shouldSwitch = true;
-                        break;
-                    }
-                }
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                }
-            }
-        }
-    </script>
     <style>
         body {
             background-image: url('./images/result/c.jpg');
@@ -64,7 +36,7 @@
         button:hover {
             background-color: transparent;
             box-shadow: 1px 1px 15px 15px #3c87ae;
-            color: #3c87ae;
+            color: #062c41;
         }
 
         table {
@@ -96,7 +68,7 @@
             display: flex;
             flex-direction: row;
             padding-top: 10px;
-            padding-bottom: 5px;
+            padding-bottom: 10px;
         }
         td img {
             flex-basis: 70px;
@@ -109,6 +81,13 @@
             align-items: center;
             line-height: 70px;
         }
+        .add-score {
+            color: yellow;
+            font-size: 30px;
+        }
+        .total-score {
+            font-size: 40px;
+        }
     </style>
 </head>
 
@@ -117,59 +96,58 @@
         <table id="tableResult">
             <tr>
                 <td class="td-team"><img src="./images/result/pic_team1.png"><span>TEAM 1</span></td>
-                <td id="js-score-1">0</td>
+                <td class="total-score" id="js-score-1">0</td>
+                <td class="add-score" id="add-score-1"></td>
             </tr>
             <tr>
                 <td class="td-team"><img src="./images/result/pic_team2.png"><span>TEAM 2</span></td>
-                <td id="js-score-2">0</td>
+                <td class="total-score" id="js-score-2">0</td>
+                <td class="add-score" id="add-score-2"></td>
             </tr>
             <tr>
                 <td class="td-team"><img src="./images/result/pic_team3.png"><span>TEAM 3</span></td>
-                <td id="js-score-3">0</td>
-            </tr>
-            <tr>
-                <td class="td-team"><img src="./images/result/pic_team4.png"><span>TEAM 4</span></td>
-                <td id="js-score-4">0</td>
+                <td class="total-score" id="js-score-3">0</td>
+                <td class="add-score" id="add-score-3"></td>
             </tr>
         </table>
         <button onclick="handleBack()">BACK</button>
     </div>
 
     <script>
-        if (Number(getCookie('turnPlay')) <= 4) {
+        if (Number(getCookie('turnPlay')) <= 3) {
             switch (getCookie('team')) {
                 case 'team1':
-                    setCookie('scoreTeam1', getCookie('result'), 1);
+                    //setCookie('scoreTeam1', getCookie('result'), 1);
+                    setCookie('totalScore1', Number(getCookie('totalScore1')) + Number(getCookie('result')), 1);
+                    setCookie('scoreTeam1', '+' + getCookie('result'), 1);
                     deleteCookie('team');
                     break;
                 case 'team2':
-                    setCookie('scoreTeam2', getCookie('result'), 1);
+                    setCookie('totalScore2', Number(getCookie('totalScore2')) + Number(getCookie('result')), 1);
+                    setCookie('scoreTeam2', '+' + getCookie('result'), 1);
                     deleteCookie('team');
                     break;
                 case 'team3':
-                    setCookie('scoreTeam3', getCookie('result'), 1);
-                    deleteCookie('team');
-                    break;
-                case 'team4':
-                    setCookie('scoreTeam4', getCookie('result'), 1);
+                    setCookie('totalScore3', Number(getCookie('totalScore3')) + Number(getCookie('result')), 1);
+                    setCookie('scoreTeam3', '+' + getCookie('result'), 1);
                     deleteCookie('team');
                     break;
             }
             if (checkCookie('scoreTeam1')) {
-                document.getElementById('js-score-1').innerHTML = getCookie('scoreTeam1');
+                document.getElementById('add-score-1').innerHTML = getCookie('scoreTeam1');
             }
             if (checkCookie('scoreTeam2')) {
-                document.getElementById('js-score-2').innerHTML = getCookie('scoreTeam2');
+                document.getElementById('add-score-2').innerHTML = getCookie('scoreTeam2');
             }
             if (checkCookie('scoreTeam3')) {
-                document.getElementById('js-score-3').innerHTML = getCookie('scoreTeam3');
+                document.getElementById('add-score-3').innerHTML = getCookie('scoreTeam3');
             }
-            if (checkCookie('scoreTeam4')) {
-                document.getElementById('js-score-4').innerHTML = getCookie('scoreTeam4');
-            }
-            sortTable();
 
-            if (Number(getCookie('turnPlay')) == 4) {
+            document.getElementById('js-score-1').innerHTML = getCookie('totalScore1');
+            document.getElementById('js-score-2').innerHTML = getCookie('totalScore2');
+            document.getElementById('js-score-3').innerHTML = getCookie('totalScore3');
+
+            if (getCookie('turnPlay') === '3') {
                 deleteCookie('game');
                 deleteCookie('team');
                 deleteCookie('turnPlay');
@@ -177,7 +155,33 @@
                 deleteCookie('scoreTeam1');
                 deleteCookie('scoreTeam2');
                 deleteCookie('scoreTeam3');
-                deleteCookie('scoreTeam4');
+            }
+            sortTable();
+        }
+        function handleBack() {
+            redirect();
+        }
+        // sort table
+        function sortTable() {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("tableResult");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 0; i < rows.length; i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[1];
+                    y = rows[i + 1].getElementsByTagName("TD")[1];
+                    if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                }
             }
         }
     </script>

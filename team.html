@@ -16,30 +16,15 @@
 		<div class="col-md-12 title">
 			<div class="row-cl">
 				<div class="col-md-4">
-					<div class="flip-container cl-1" ontouchstart="this.classList.toggle('hover');">
-						<div class="flipper">
+					<div class="flip-container cl-2" ontouchstart="this.classList.toggle('hover');">
+						<div class="flipper" onclick="setCookieTeam('team1')">
 							<div class="front">
-								<img src="images/team/team_1.png"/>
+								<img src="images/team/team_2.png"/>
 								<div class="text">
 									Team 1
 								</div>
 							</div>
-							<div class="back" onclick="setCookieTeam('team1')">
-								<img src="images/team/back_1.png"/>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="flip-container cl-2" ontouchstart="this.classList.toggle('hover');">
-						<div class="flipper">
-							<div class="front">
-								<img src="images/team/team_2.png"/>
-								<div class="text">
-									Team 2
-								</div>
-							</div>
-							<div class="back" onclick="setCookieTeam('team2')">
+							<div class="back">
 								<img src="images/team/back_3.png"/>
 							</div>
 						</div>
@@ -47,14 +32,14 @@
 				</div>
 				<div class="col-md-4">
 					<div class="flip-container cl-3" ontouchstart="this.classList.toggle('hover');"  id="flip-toggle">
-						<div class="flipper">
+						<div class="flipper" onclick="setCookieTeam('team2')">
 							<div class="front">
 								<img src="images/team/team_3.png"/>
 								<div class="text">
-									Team 3
+									Team 2
 								</div>
 							</div>
-							<div class="back" onclick="setCookieTeam('team3')">
+							<div class="back">
 								<img src="images/team/back_2.png"/>
 							</div>
 						</div>
@@ -62,14 +47,14 @@
 				</div>
 				<div class="col-md-4">
 					<div class="flip-container cl-4" ontouchstart="this.classList.toggle('hover');"  id="flip-toggle">
-						<div class="flipper">
+						<div class="flipper" onclick="setCookieTeam('team3')">
 							<div class="front">
 								<img src="images/team/team_4.png"/>
 								<div class="text">
-									Team 4
+									Team 3
 								</div>
 							</div>
-							<div class="back" onclick="setCookieTeam('team4')">
+							<div class="back">
 								<img src="images/team/back_4.png"/>
 							</div>
 						</div>

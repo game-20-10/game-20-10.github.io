@@ -89,11 +89,12 @@ let cpuType1R9Url = [
     "images/marathon/cpu_type1_1_r_9.png",
     "images/marathon/cpu_type1_2_r_9.png"
 ];
+
 let cpuType1R10Url = [
     "images/marathon/cpu_type1_1_r_10.png",
     "images/marathon/cpu_type1_2_r_10.png"
 ];
-
+ 
 let cpuType2Url = [
     "images/marathon/cpu_type2_1.png",
     "images/marathon/cpu_type2_2.png"

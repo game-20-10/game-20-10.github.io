@@ -13,9 +13,9 @@
             margin-top: 28px;
             color: white;
             font-weight: bold;
-            font-size: 21px;
-            border: 5px solid #d3325f;
-            height: 309px;
+            font-size: 18px;
+            border: 3px solid #d3325f;
+            height: 138px;
             padding: 8px
         }
 
@@ -25,7 +25,8 @@
 
         body {
             color: white;
-            background-color: #30302f;
+            /* background-color: #30302f; */
+            background: url(images/choose_game/game_bg_4.jpg) center/cover fixed no-repeat;
         }
 
         small {
@@ -134,6 +135,7 @@
         }
         }
         .item-container {
+            height: 348px;
             position: relative;
             overflow: hidden;
             background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
@@ -173,7 +175,7 @@
         }
 
         .item-container:hover {
-            outline: 10px solid #d3325f;
+            outline: 4px solid #d3325f;
             outline-offset: 0.8rem;
         }
     </style>
@@ -195,41 +197,40 @@
         </div>
     </header>
 
-    <section class="py-5" id="special-items">
+    <section id="section" class="py-5" id="special-items">
         <div class="container my-5">
             <h1 class="choose-game">Chọn game nào cả nhà ơi...!</h1>
             <div class="row parent-container">
                 <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
-                    <div class="item-container">
+                    <div class="item-container" onclick="setCookieGame('marathon')">
                         <img src="images/choose_game/marathon_2.png" class="img-fluid img-thumbnail item-img" alt="menu item">
-                        <div onclick="setCookieGame('marathon')">
-                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Chạy marathon</h1>
+                        <div>
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Maratông</h1>
                         </div>
                     </div>
-                    <p class="mt-28">Game marathon là game thi chạy giữa những người với nhau, người chơi có thể chạy
-                        chính giữa, bên trái hoặc bên phải sao cho không va chạm với người chạy cùng, nếu va vào thì end
-                        game.</p>
+                    <p class="mt-28">Đôi khi giữa dòng đời xô đẩy, ta vô tình lại được chạm vào nhau</br>
+                            *** Bấm trái / phải để né tránh các vật thể lao tới</p>
                 </div>
                 <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
-                    <div class="item-container">
+                    <div class="item-container" onclick="setCookieGame('shooter')">
                         <img src="images/choose_game/shooter_2.png" class="img-fluid img-thumbnail item-img" alt="menu item">
-                        <div onclick="setCookieGame('bird')">
-                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Bắn chim</h1>
+                        <div>
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Bắn trim</h1>
                         </div>
                     </div>
-                    <p class="mt-28">Game bắn chim là game giúp người chơi bắn hạ những con chim đang bay trong khoảng
-                        thời gian là 60s, người chơi có 9 vị trí bấm trên màn hình, bấm vào 9 vị trí chứ không phải bấm
-                        vào chim đang bay. Bắn được càng nhiều chim thì điểm số sẽ càng cao.</p>
+                    <p class="mt-28">Chim bay chim lượn tung trời, súng anh nhiều đạn bắn tàn đời em</br>
+                            *** Bấm các vật thể bay lượn để được điểm</p>
                 </div>
                 <div class="col-4 mx-auto col sm-6 col lg-4 my-3">
-                    <div class="item-container">
-                        <img src="images/choose_game/chim-ca-tung.png" class="img-fluid img-thumbnail item-img" alt="menu item">
-                        <div onclick="setCookieGame('shooter')">
-                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Chim cà tưng</h1>
+                    <div class="item-container" onclick="setCookieGame('volleyball')">
+                        <img src="images/choose_game/chim-ca-tung-2.png" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <div>
+                            <h1 class="text-uppercase text-center item-link font-weight-bold px-3">Tưng bống</h1>
                         </div>
                     </div>
                     <div class="intro">
-                        <p class="mt-28">Game giống như game Flappy Bird...</p>
+                        <p class="mt-28">Bóng xinh bóng đứng đầu đình, bóng xoay bóng lượn bóng sà vào anh </br>
+                            *** Bấm 3 nút trái/giữa/phải để tưng bóng, giữ càng lâu điểm càng cao</p>
                     </div>
                 </div>
             </div>
@@ -242,9 +243,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
     <script>
         $(document).ready(function() { 
-            $("#header").ripples({
-                dropRadius: 12,
-                perturbance: 0.0000001,
+            $("#header, #section").ripples({
+                dropRadius: 14,
+                perturbance: 0.000001,
             });    
         });
     </script>

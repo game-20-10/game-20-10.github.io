@@ -46,7 +46,7 @@ function setCookieFail(score) {
 function setCookieGame(val) {
     setCookie('game', val, 1);
     setCookie('turnPlay', 0, 1);
-    location.replace('./index.html');
+    redirect();
 }
 // Set cookie team
 function setCookieTeam(val) {
