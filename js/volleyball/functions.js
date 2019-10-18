@@ -14,6 +14,7 @@ function ballWall() {
     }
 
     if (ball.y >= LOGICAL_HEIGHT + ball.height / 2) {
+        setCookieFail(totalScore);
         endGame();
     }
 }
@@ -22,7 +23,6 @@ function ballWall() {
 function endGame() {
     currentScreen++;
     gameScreen.visible = false;
-    setCookieFail(totalScore);
     resultScreen.visible = true;
     state = gameOver;
     totalScoreText.text = totalScore;
